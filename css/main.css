@@ -15,6 +15,14 @@ body {
   color: var(--header-color);
 }
 
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
 .container {
   width: var(--container-width);
   padding: 0 var(--container-padding);
@@ -23,6 +31,7 @@ body {
 
 .header {
   min-height: 940px;
+  padding-top: 57px;
 
   background: linear-gradient(132.05deg,
     #428E5F -17.38%,
@@ -31,11 +40,81 @@ body {
   color: var(--header-color);
 }
 
+.header a {
+  color: var(--header-color);
+}
 
 .nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 80px;
+
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .nav__logo {
   font-weight: bold;
+  font-size: 20px;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 80px;
+}
+
+.nav__list a{
+  color: var(--header-color);
+  position: relative;
+}
+
+.nav__list a.active::after,
+.nav__list a:hover::after{
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 10px;
+  bottom: -7px;
+  
+  display: block;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #C4C4C4;
+}
+
+.nav__login {
+  display: flex;
+  column-gap: 25px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 44px;
+
+  background: linear-gradient(129.54deg, #FF7B4E 15.57%, #FF584E 95.03%), #FFFFFF;
+  border-radius: 100px;
+}
+
+/* fix it  VVV */
+.btn:hover {
+  color: #edfa38;
+  transition: color 0.2s ease-in;
+}
+/* fix it  ^^^ */
+
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.header__content {
+  box-sizing: border-box;
+  min-height: 412px;
+  max-width: 592px;
+
+  background-color: var(--header-color);
+  margin-top: 95px;
 }
